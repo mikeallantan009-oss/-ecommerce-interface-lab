@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Listing</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 1.5rem 2rem;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    .home-button {
+      display: inline-block;
+      margin: 0.5rem 2rem;
+      background-color: transparent;
+      color: #4f46e5;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 0.4rem 0.8rem;
+      border: 1.5px solid #4f46e5;
+      border-radius: 5px;
+      transition: 0.2s;
+    }
+
+    .home-button:hover {
+      background-color: #4f46e5;
+      color: #fff;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 2rem;
+    }
+
+    section {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    section h2 {
+      margin-top: 0;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.5rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    article {
+      background-color: #f9f9f9;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      min-height: 350px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    article:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 15px rgba(79, 70, 229, 0.15);
+    }
+
+    article img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      height: 150px;
+      object-fit: contain;
+    }
+
+    article h3 {
+      margin: 0.5rem 0;
+    }
+
+    article p {
+      font-weight: bold;
+      color: #4f46e5;
+      margin: 0.5rem 0;
+    }
+
+    article a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      text-decoration: none;
+      color: #4f46e5;
+      font-weight: bold;
+    }
+
+    article a:hover {
+      text-decoration: underline;
+    }
+
+    aside {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      height: fit-content;
+    }
+
+    aside h2 {
+      margin-top: 0;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.5rem;
+    }
+
+    fieldset {
+      border: none;
+      margin-bottom: 1.5rem;
+      padding: 0;
+    }
+
+    legend {
+      font-weight: bold;
+      color: #4f46e5;
+      margin-bottom: 0.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+ 
+  <header>
+    <h1>Products</h1>
+  </header>
+
+  <a href="landing.html" class="home-button">Back</a>
+
+  <main>
+   
+    <section aria-labelledby="products-heading">
+      <h2 id="products-heading">Available Products</h2>
+
+      <div class="product-grid">
+        
+        <article data-category="electronics" data-price="medium">
+          <img src="Headphones.webp" alt="Wireless Headphones" />
+          <h3>Wireless Headphones</h3>
+          <p>$99.00</p>
+          <a href="Details-Headphones.html">View Details</a>
+        </article>
+
+        <article data-category="electronics" data-price="high">
+          <img src="Smartwatch.webp" alt="Smart Watch" />
+          <h3>Smart Watch</h3>
+          <p>$149.00</p>
+          <a href="Details-Smartwatch.html">View Details</a>
+        </article>
+
+        <article data-category="furniture" data-price="low">
+          <img src="Table.avif" alt="Wooden Table" />
+          <h3>Table</h3>
+          <p>$29.00 <span style="text-decoration: line-through; color: #999;">$49.00</span></p>
+          <a href="Details.html">View Details</a>
+        </article>
+      </div>
+    </section>
+
+    <aside aria-labelledby="filter-heading">
+      <h2 id="filter-heading">Filter Products</h2>
+
+      <form>
+        <fieldset>
+          <legend>Category</legend>
+          <label><input type="checkbox" name="category" value="electronics" /> Electronics</label>
+          <label><input type="checkbox" name="category" value="furniture" /> Furniture</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Price Range</legend>
+          <label><input type="radio" name="price" value="low" /> Under $50</label>
+          <label><input type="radio" name="price" value="medium" /> $50 – $100</label>
+          <label><input type="radio" name="price" value="high" /> Above $100</label>
+        </fieldset>
+      </form>
+    </aside>
+  </main>
+
+  <script>
+    const checkboxes = document.querySelectorAll('input[name="category"]');
+    const radios = document.querySelectorAll('input[name="price"]');
+    const products = document.querySelectorAll('.product-grid article');
+
+    function filterProducts() {
+      const selectedCategories = Array.from(checkboxes)
+        .filter(cb => cb.checked)
+        .map(cb => cb.value);
+
+      const selectedPrice = Array.from(radios).find(r => r.checked)?.value;
+
+      products.forEach(product => {
+        const category = product.dataset.category;
+        const price = product.dataset.price;
+
+        const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(category);
+        const priceMatch = !selectedPrice || selectedPrice === price;
+
+        product.style.display = categoryMatch && priceMatch ? 'flex' : 'none';
+      });
+    }
+
+    checkboxes.forEach(cb => cb.addEventListener('change', filterProducts));
+    radios.forEach(r => r.addEventListener('change', filterProducts));
+  </script>
+</body>
+</html>

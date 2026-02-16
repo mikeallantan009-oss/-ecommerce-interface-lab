@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Detail</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 1.5rem 2rem;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin: 0.5rem 2rem;
+      background-color: transparent;
+      color: #4f46e5;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 0.4rem 0.8rem;
+      border: 1.5px solid #4f46e5;
+      border-radius: 5px;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .back-button:hover {
+      background-color: #4f46e5;
+      color: #fff;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .product-header {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .product-header img {
+      max-width: 250px;
+      border-radius: 10px;
+      object-fit: contain;
+    }
+
+    .product-info h2 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-info p {
+      font-weight: bold;
+      color: #4f46e5;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 0.8rem;
+      text-align: left;
+    }
+
+    table th {
+      background-color: #4f46e5;
+      color: #fff;
+    }
+
+    form {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    form input[type="number"] {
+      width: 70px;
+      padding: 0.4rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      padding: 0.5rem 1rem;
+      background-color: #4f46e5;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.2s ease;
+    }
+
+    form button:hover {
+      background-color: #3730a3;
+    }
+
+    .reviews {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .reviews h3 {
+      margin-top: 0;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.5rem;
+    }
+
+    blockquote {
+      font-style: italic;
+      margin: 1rem 0;
+      padding-left: 1rem;
+      border-left: 4px solid #4f46e5;
+      color: #555;
+    }
+
+    article.review {
+      border-bottom: 1px solid #eee;
+      padding: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Product Detail</h1>
+  </header>
+
+  <a href="Products.html" class="back-button">Back</a>
+
+  <main>
+
+    <div class="product-header">
+      <img src="Table.avif" alt="Wooden Table" />
+      <div class="product-info">
+        <h2>Table</h2>
+        <p>$29.00 <span style="text-decoration: line-through; color: #999;">$49.00</span></p>
+        <form>
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="quantity" name="quantity" min="1" value="1" />
+          <button type="submit">Add to Cart</button>
+        </form>
+      </div>
+    </div>
+
+    <section>
+      <h3>Technical Specifications</h3>
+      <table>
+        <tr>
+          <th>Feature</th>
+          <th>Details</th>
+        </tr>
+        <tr>
+          <td>Material</td>
+          <td>Solid Wood</td>
+        </tr>
+        <tr>
+          <td>Dimensions</td>
+          <td>120cm x 60cm x 75cm</td>
+        </tr>
+        <tr>
+          <td>Weight</td>
+          <td>15kg</td>
+        </tr>
+        <tr>
+          <td>Color</td>
+          <td>Natural Oak</td>
+        </tr>
+        <tr>
+          <td>Max Load</td>
+          <td>80kg</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="reviews">
+      <h3>User Reviews</h3>
+
+      <article class="review">
+        <blockquote>"Great table! Sturdy and well-built. Perfect for my living room."</blockquote>
+        <p>- Jane Marie Fallorina</p>
+      </article>
+
+      <article class="review">
+        <blockquote>"The price is amazing for the quality. Highly recommend!"</blockquote>
+        <p>- Jamaica Graciano</p>
+      </article>
+
+      <article class="review">
+        <blockquote>"Easy to assemble and looks beautiful. Happy with my purchase."</blockquote>
+        <p>- Mark John Sultan</p>
+      </article>
+    </section>
+
+  </main>
+
+</body>
+</html>

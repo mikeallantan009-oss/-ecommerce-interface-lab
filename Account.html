@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 1.5rem 2rem;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav.account-nav {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav.account-nav a {
+      color: #4f46e5;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+  
+    .back-button {
+      display: inline-block;
+      margin-top: 1rem;
+      background-color: transparent;
+      color: #4f46e5;
+      border: 1.5px solid #4f46e5;
+      padding: 0.4rem 0.8rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .back-button:hover {
+      background-color: #4f46e5;
+      color: #fff;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    section {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: #4f46e5;
+      margin-top: 0;
+    }
+
+    details {
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      background-color: #fdfdfd;
+    }
+
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+      color: #4f46e5;
+    }
+
+    dl dt {
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+
+    dl dd {
+      margin-left: 1rem;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome, Jane Doe</h1>
+    <nav class="account-nav">
+      <a href="#">Order History</a>
+      <a href="#">Profile Settings</a>
+      <a href="#">Wishlist</a>
+    </nav>
+  
+    <a href="Landing.html" class="back-button">Back</a>
+  </header>
+
+  <main>
+    
+    <section>
+      <h2>Previous Purchases</h2>
+
+      <details>
+        <summary>Order #1023 - $277.00 - Delivered</summary>
+        <dl>
+          <dt>Table</dt>
+          <dd>Qty: 1 | Price: $29.00</dd>
+          <dt>Wireless Headphones</dt>
+          <dd>Qty: 1 | Price: $99.00</dd>
+          <dt>Smart Watch</dt>
+          <dd>Qty: 1 | Price: $149.00</dd>
+        </dl>
+      </details>
+
+      <details>
+        <summary>Order #1019 - $99.00 - Delivered</summary>
+        <dl>
+          <dt>Wireless Headphones</dt>
+          <dd>Qty: 1 | Price: $99.00</dd>
+        </dl>
+      </details>
+
+    </section>
+  </main>
+
+</body>
+</html>
