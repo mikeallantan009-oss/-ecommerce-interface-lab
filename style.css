@@ -1,0 +1,290 @@
+/* ------------------------------
+   1. CSS Variables (Global Colors)
+------------------------------ */
+:root {
+  --primary-color: #2c3e50;   /* dark blue-gray for headings */
+  --accent-color: #e67e22;    /* bright orange for buttons or highlights */
+  --bg-light: #f4f4f4;        /* light background */
+  --text-main: #333333;       /* main body text */
+}
+
+/* ------------------------------
+   2. Body & Global Styles
+------------------------------ */
+body {
+  font-family: "Arial", sans-serif; /* primary sans-serif font */
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+}
+
+/* ------------------------------
+   3. Headings
+------------------------------ */
+h1, h2, h3 {
+  font-family: "Georgia", serif;   /* distinct serif font for headings */
+  font-weight: bold;
+  line-height: 1.3;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* ------------------------------
+   4. Links
+------------------------------ */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ------------------------------
+   5. Buttons (optional global style)
+------------------------------ */
+button {
+  font-family: inherit;
+  font-weight: bold;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #cf6b1f; /* slightly darker accent */
+}
+
+/* ------------------------------
+   6. Optional utility classes
+------------------------------ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+/* ------------------------------
+   1. Navigation Links
+------------------------------ */
+nav a {
+  text-decoration: none; /* remove underline for cleaner look */
+  color: var(--primary-color);
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--accent-color); /* change color on hover */
+  text-decoration: underline; /* optional underline on hover */
+}
+
+nav a:focus {
+  outline: 2px dashed var(--accent-color); /* visible for keyboard users */
+  outline-offset: 3px;
+}
+
+/* ------------------------------
+   2. Buttons
+------------------------------ */
+button {
+  font-family: inherit;
+  font-weight: bold;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.1s ease;
+}
+
+/* Hover state */
+button:hover {
+  background-color: #cf6b1f; /* slightly darker orange */
+  color: #fff;
+}
+
+/* Active / pressed state */
+button:active {
+  transform: scale(0.97); /* slightly shrink to simulate press */
+  background-color: #b85a1b; /* darker background */
+}
+
+/* Focus state for keyboard users */
+button:focus {
+  outline: 2px dashed var(--primary-color);
+  outline-offset: 3px;
+}
+/* Product grid cards */
+.product-grid article {
+  width: 220px;                      /* fixed width for consistent card size */
+  display: inline-block;             /* align side-by-side */
+  background-color: #f9f9f9;         /* base card color */
+  border: 1px solid #ddd;            /* border for card */
+  border-radius: 10px;               /* rounded corners */
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 350px;
+  margin-bottom: 1.5rem;
+  vertical-align: top;
+}
+
+/* Hover effect */
+.product-grid article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(79, 70, 229, 0.15);
+}
+
+/* Alternating backgrounds using nth-child */
+.product-grid article:nth-child(odd) {
+  background-color: #fdfdfd;
+}
+
+.product-grid article:nth-child(even) {
+  background-color: #f0f0ff;
+}
+
+/* Images inside cards */
+.product-grid article img {
+  max-width: 100%;
+  border-radius: 8px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+/* Product title */
+.product-grid article h3 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+/* Product price */
+.product-grid article p {
+  font-weight: bold;
+  color: #4f46e5;
+  margin: 0.5rem 0;
+}
+
+/* View Details link */
+.product-grid article a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  text-decoration: none;
+  color: #4f46e5;
+  font-weight: bold;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.product-grid article a:hover {
+  text-decoration: underline;
+}
+/* -----------------------------
+   Cart.html: Empty Cart
+------------------------------ */
+
+/* Style cart container when empty */
+ul.cart-list:empty {
+  background-color: #f0f0ff;   /* light background when no items */
+  padding: 2rem;
+  text-align: center;
+  border-radius: 10px;
+  color: #555;
+  font-style: italic;
+}
+
+/* Hide subtotal & checkout if cart is empty */
+ul.cart-list:empty ~ .subtotal-section,
+ul.cart-list:empty ~ .checkout-btn {
+  display: none;
+}
+
+/* Automatically add currency symbol before prices */
+.price::before {
+  content: "$";               /* add $ symbol */
+  margin-right: 0.2rem;
+}
+
+/* -----------------------------
+   Signup.html: Required & Valid Inputs
+------------------------------ */
+
+/* Mandatory fields styling */
+input:required {
+  border: 2px solid #e67e22;   /* highlight required fields */
+  padding: 0.4rem;
+  border-radius: 5px;
+}
+
+/* Change style when input is valid */
+input:valid {
+  border-color: #4f46e5;       /* border turns accent color when valid */
+  background-color: #f0f0ff;
+  outline: none;
+}
+/* ---------------- Task 5: Details.html ---------------- */
+
+/* Make the first column of tables bold and slightly different color */
+table tr td:first-child {
+  font-weight: bold;
+  color: #4f46e5;
+}
+
+/* Add stylized quotation marks before and after blockquote in reviews */
+.reviews blockquote::before {
+  content: "“";
+  font-size: 2rem;
+  color: #4f46e5;
+  vertical-align: top;
+  margin-right: 0.2rem;
+}
+
+.reviews blockquote::after {
+  content: "”";
+  font-size: 2rem;
+  color: #4f46e5;
+  vertical-align: bottom;
+  margin-left: 0.2rem;
+}
+
+/* ---------------- Task 5: Account.html ---------------- */
+
+/* Style bullets in order history using ::marker */
+dl dt::marker,
+dl dd::marker {
+  color: #4f46e5; /* bullet color */
+  font-size: 1.2em;
+  content: "• "; /* custom bullet if needed */
+}
+
+/* Optional: Add spacing for better readability */
+dl dt {
+  margin-top: 0.8rem;
+}
+
+dl dd {
+  margin-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
