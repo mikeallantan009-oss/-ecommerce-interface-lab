@@ -90,12 +90,21 @@
       padding: 2rem;
     }
 
+    /* ------------------------------
+       Hero Section Flexbox Centering
+    ------------------------------ */
     .hero {
       background: linear-gradient(135deg, #4f46e5, #6366f1);
       color: white;
       padding: 3rem 2rem;
       border-radius: 10px;
       text-align: center;
+      
+      display: flex;              /* Flex container */
+      flex-direction: column;     /* Stack heading, paragraph, buttons */
+      justify-content: center;    /* Vertical center */
+      align-items: center;        /* Horizontal center */
+      min-height: 300px;          /* Ensure some vertical height */
       margin-bottom: 3rem;
     }
 
@@ -219,7 +228,6 @@
   </main>
 
   <script>
-   
     const settingsBtn = document.getElementById('settingsBtn');
     const settingsMenu = document.getElementById('settingsMenu');
 

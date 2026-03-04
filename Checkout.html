@@ -46,8 +46,8 @@
       margin: auto;
       padding: 2rem;
       display: flex;
+      flex-direction: column; 
       gap: 2rem;
-      flex-wrap: wrap;
     }
 
     section.checkout-section {
@@ -141,13 +141,18 @@
       background-color: #3730a3;
     }
 
-    @media (max-width: 900px) {
+    @media (min-width: 900px) {
       main {
-        flex-direction: column;
+        flex-direction: row; 
+        align-items: flex-start;
       }
 
       aside.order-summary {
-        flex: 1 1 auto;
+        flex: 0 0 350px; 
+      }
+
+      section.checkout-section {
+        flex: 1 1 auto; 
       }
     }
   </style>

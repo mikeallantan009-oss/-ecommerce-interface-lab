@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Product Listing</title>
-
   <link rel="stylesheet" href="style.css">
   <style>
     body {
@@ -42,23 +41,31 @@
       color: #fff;
     }
 
+    /* Container for sidebar + main products */
     main {
       max-width: 1200px;
       margin: auto;
       padding: 2rem;
       display: grid;
-      grid-template-columns: 3fr 1fr;
       gap: 2rem;
+      grid-template-columns: 1fr; /* Mobile: sidebar on top */
     }
 
-    section {
+    /* Desktop grid layout: sidebar 25%, main products 75% */
+    @media (min-width: 900px) {
+      main {
+        grid-template-columns: 3fr 1fr;
+      }
+    }
+
+    section, aside {
       background-color: #fff;
       padding: 1.5rem;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
 
-    section h2 {
+    section h2, aside h2 {
       margin-top: 0;
       border-bottom: 2px solid #eee;
       padding-bottom: 0.5rem;
@@ -66,9 +73,21 @@
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1.5rem;
       margin-top: 1rem;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 481px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 769px) {
+      .product-grid {
+        grid-template-columns: repeat(4, minmax(220px, 1fr));
+      }
     }
 
     article {
@@ -118,41 +137,32 @@
       text-decoration: underline;
     }
 
-    aside {
-      background-color: #fff;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-      height: fit-content;
-    }
-
-    aside h2 {
-      margin-top: 0;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 0.5rem;
-    }
-
-    fieldset {
+    aside fieldset {
       border: none;
       margin-bottom: 1.5rem;
       padding: 0;
     }
 
-    legend {
+    aside legend {
       font-weight: bold;
       color: #4f46e5;
       margin-bottom: 0.5rem;
     }
 
-    label {
+    aside label {
       display: block;
       margin-bottom: 0.5rem;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: #999;
     }
   </style>
 </head>
 
 <body>
- 
+
   <header>
     <h1>Products</h1>
   </header>
@@ -160,12 +170,11 @@
   <a href="landing.html" class="home-button">Back</a>
 
   <main>
-   
+    <!-- Product Section -->
     <section aria-labelledby="products-heading">
       <h2 id="products-heading">Available Products</h2>
 
       <div class="product-grid">
-        
         <article data-category="electronics" data-price="medium">
           <img src="Headphones.webp" alt="Wireless Headphones" />
           <h3>Wireless Headphones</h3>
@@ -183,12 +192,13 @@
         <article data-category="furniture" data-price="low">
           <img src="Table.avif" alt="Wooden Table" />
           <h3>Table</h3>
-          <p>$29.00 <span style="text-decoration: line-through; color: #999;">$49.00</span></p>
+          <p>$29.00 <span class="old-price">$49.00</span></p>
           <a href="Details.html">View Details</a>
         </article>
       </div>
     </section>
 
+    <!-- Sidebar / Filters -->
     <aside aria-labelledby="filter-heading">
       <h2 id="filter-heading">Filter Products</h2>
 
@@ -235,5 +245,6 @@
     checkboxes.forEach(cb => cb.addEventListener('change', filterProducts));
     radios.forEach(r => r.addEventListener('change', filterProducts));
   </script>
+
 </body>
 </html>
